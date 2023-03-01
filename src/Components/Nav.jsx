@@ -15,7 +15,7 @@ function Nav () {
                 <Link to="/" className="text-white">
                   Home
                 </Link>
-                <Link to="/" className="text-white">
+                <Link to="/Academy" className="text-white">
                   Academy
                 </Link>
                 <Link to="/" className="text-white">

@@ -17,11 +17,12 @@ function App() {
       <Routes>
         <Route element={<Fullscreen />}>
           <Route path='/' element={<LandingPage />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path='/Academy' element={<Academy />}>
-            <Route path="/Academy/Videos" element= {<Videos />} />
-            <Route path="Academy/Articles" element= {<Articles />} />
-          </Route>
+        
+          <Route path='./contact' element={<Contact />} />
+        </Route>
+        <Route path='/Academy' element={<Academy />}>
+          <Route path="/Academy/Videos" element= {<Videos />} />
+          <Route path="/Academy/Articles" element= {<Articles />} />
         </Route>
         <Route element={<Sponsor />}>
           <Route path='/donation' element={<Donations />} />
