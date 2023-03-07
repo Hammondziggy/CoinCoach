@@ -1,43 +1,40 @@
 import React, { useState } from 'react';
-import { Link, Outlet } from 'react-router-dom';
-import { ReactComponent as SearchIcon } from '../../Search_icon.svg';
+import Articles from './Articles';
+import Videos from './Videos';
 
 function Academy() {
-  const [searchValue, setSearchValue] = useState('');
+  const [activeTab, setActiveTab] = useState('Videos');
 
-  const handleSearchChange = (event) => {
-    setSearchValue(event.target.value);
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
   };
 
   return (
-    <div>
-      <div className="flex items-center bg-white">
-        <Link
-          to="/Academy/Videos"
-          className="flex-1 py-2 text-center bg-orange text-white font-bold rounded-l-lg hover:bg-white hover:text-orange"
+    <div className="academy-page">
+      <div className="flex space-x-2 bg-white rounded-md">
+        <button
+          className={`py-2 px-4 font-semibold rounded-md ${
+            activeTab === 'Videos' ? 'bg-orange-500 text-white' : 'text-orange-500'
+          }`}
+          onClick={() => handleTabClick('Videos')}
         >
-          Videos
-        </Link>
-        <Link
-          to="/Academy/Articles"
-          className="flex-1 py-2 text-center bg-orange text-white font-bold rounded-r-lg hover:bg-white hover:text-orange"
+          Videos 
+        </button>
+        <button
+          className={`py-2 px-4 font-semibold rounded-md ${
+            activeTab === 'Articles' ? 'bg-orange-500 text-white' : 'text-orange-500'
+          }`}
+          onClick={() => handleTabClick('Articles')}
         >
           Articles
-        </Link>
-        <div className="relative flex items-center justify-end flex-1 pr-4">
-          <input
-            type="text"
-            className="pl-8 py-2 pr-4 w-full rounded-md border-gray-400 border-2 focus:border-orange focus:outline-none"
-            placeholder="Search"
-            value={searchValue}
-            onChange={handleSearchChange}
-          />
-          <SearchIcon className="absolute left-2" />
-        </div>
-        
+        </button>
       </div>
-      
-      <Outlet />
+      <div className="search-bar">
+        <input type="text" placeholder="Search" />
+      </div>
+      <div className="content">
+        {activeTab === 'Videos' ? <Videos /> : <Articles />}
+      </div>
     </div>
   );
 }

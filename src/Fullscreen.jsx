@@ -9,7 +9,7 @@ const Fullscreen = () => {
   return (
     <>
       <Nav />
-        <Outlet />
+      <Outlet />
       <Footer />
     </>
   )

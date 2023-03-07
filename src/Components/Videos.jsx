@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 //import ButtonGroup from "./Button";
 
 
 export default function Videos() {
-   return (
-     <div>
-        <div className="bg-white rounded-lg shadow-lg p-6">
+  return (
+    <div>
+      <div className="bg-white rounded-lg shadow-lg p-6">
         <iframe
           src="https://www.youtube.com/embed/axGzh4iVoZU"
           frameBorder="0"
@@ -26,9 +27,8 @@ export default function Videos() {
             <input type="button" value="Save for Later" />
           </Link>
         </div>  
-       </div>
+      </div>
 
-      {/* div 2 */}
       <div className="bg-white rounded-lg shadow-lg p-6">
         <iframe
           src="https://www.youtube.com/embed/Yb6825iv0Vk"
@@ -51,8 +51,7 @@ export default function Videos() {
           </Link>
         </div>
       </div>
-
-      {/* div 3 */}
+       
       <div className="bg-white rounded-lg shadow-lg p-6">
         <iframe
           src="https://www.youtube.com/embed/3gD6aJZDjG8"

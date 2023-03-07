@@ -18,13 +18,13 @@ function Nav () {
                 <Link to="/Academy" className="text-white">
                   Academy
                 </Link>
-                <Link to="/" className="text-white">
+            {/**<Link to="/" className="text-white">
                   Tools
                 </Link>
                 <Link to="/" className="text-white">
                   Wallet
-                </Link>
-                <Link to="/contact" className="text-white">
+                </Link>**/}
+                <Link to="/Contact" className="text-white">
                   Contact us
                 </Link>
           </div>
